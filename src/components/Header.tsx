@@ -7,8 +7,8 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link to="/" className="flex items-center gap-2">
           <ShoppingBag className="h-7 w-7 text-primary" />
-          <span className="font-heading text-xl font-bold tracking-tight text-foreground">
-            KICK<span className="text-primary">STORE</span>
+          <span className="font-heading text-xl font-bold tracking-tight text-foreground">iZoneGadgets
+            <span className="text-primary">STORE</span>
           </span>
         </Link>
 
@@ -33,8 +33,8 @@ const Header = () => {
           </button>
         </div>
       </div>
-    </header>
-  );
+    </header>);
+
 };
 
 export default Header;

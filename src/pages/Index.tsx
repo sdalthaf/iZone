@@ -11,9 +11,9 @@ const Index = () => {
   const [activeCategory, setActiveCategory] = useState(catParam || "all");
 
   const filtered =
-    activeCategory === "all"
-      ? products
-      : products.filter((p) => p.category === activeCategory);
+  activeCategory === "all" ?
+  products :
+  products.filter((p) => p.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-background">
@@ -24,8 +24,8 @@ const Index = () => {
         <img
           src={heroBanner}
           alt="Premium footwear collection"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+          className="absolute inset-0 h-full w-full object-cover" />
+
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         <div className="relative flex h-full flex-col items-center justify-end pb-16 text-center">
           <h1 className="animate-fade-in-up font-heading text-5xl font-bold leading-tight text-foreground md:text-7xl">
@@ -40,48 +40,48 @@ const Index = () => {
       {/* Categories */}
       <section className="container mx-auto px-4 py-10">
         <div className="flex flex-wrap gap-3">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`rounded-full px-5 py-2 font-heading text-sm font-medium transition-all ${
-                activeCategory === cat.id
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-              }`}
-            >
+          {categories.map((cat) =>
+          <button
+            key={cat.id}
+            onClick={() => setActiveCategory(cat.id)}
+            className={`rounded-full px-5 py-2 font-heading text-sm font-medium transition-all ${
+            activeCategory === cat.id ?
+            "bg-primary text-primary-foreground" :
+            "bg-secondary text-secondary-foreground hover:bg-secondary/80"}`
+            }>
+
               {cat.label}
             </button>
-          ))}
+          )}
         </div>
       </section>
 
       {/* Product Grid */}
       <section className="container mx-auto px-4 pb-20">
         <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-4">
-          {filtered.map((product, i) => (
-            <div
-              key={product.id}
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${i * 0.07}s` }}
-            >
+          {filtered.map((product, i) =>
+          <div
+            key={product.id}
+            className="animate-fade-in-up"
+            style={{ animationDelay: `${i * 0.07}s` }}>
+
               <ProductCard product={product} />
             </div>
-          ))}
+          )}
         </div>
-        {filtered.length === 0 && (
-          <p className="py-20 text-center text-muted-foreground">
+        {filtered.length === 0 &&
+        <p className="py-20 text-center text-muted-foreground">
             No products in this category yet.
           </p>
-        )}
+        }
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-card py-8 text-center text-sm text-muted-foreground">
-        © 2026 KickStore. All rights reserved.
+      <footer className="border-t border-border bg-card py-8 text-center text-sm text-muted-foreground">© 2026 iZoneGadgets. All rights reserved.
+
       </footer>
-    </div>
-  );
+    </div>);
+
 };
 
 export default Index;
