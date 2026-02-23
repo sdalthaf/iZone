@@ -1,0 +1,8 @@
+# Cloudflare Pages + Functions (Workers) for iZone
+# Deploy: connect this repo in Cloudflare dashboard or use `npx wrangler pages deploy dist`
+name = "izone"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist"
+
+# Optional: set LOGIN_USERNAME and LOGIN_PASSWORD in Cloudflare Pages > Settings > Environment variables
+# for the basic login API at POST /api/login
